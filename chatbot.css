@@ -1,0 +1,245 @@
+/*
+    Dana fonts are considered a proprietary software. To gain information about the laws regarding
+    the use of these fonts, please visit www.fontiran.com
+    ---------------------------------------------------------------------
+    This set of fonts are used in this project under the license: (17KXIWC4)
+    ---------------------------------------------------------------------
+*/
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/Webfonts/fonts/woff2/Dana-Medium.woff2') format('woff2'),
+         url('../fonts/Webfonts/fonts/woff/Dana-Medium.woff') format('woff');
+}
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/Webfonts/fonts/woff2/Dana-DemiBold.woff2') format('woff2'),
+         url('../fonts/Webfonts/fonts/woff/Dana-DemiBold.woff') format('woff');
+}
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/Webfonts/fonts/woff2/Dana-ExtraBold.woff2') format('woff2'),
+         url('../fonts/Webfonts/fonts/woff/Dana-ExtraBold.woff') format('woff');
+}
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/Webfonts/fonts/woff2/Dana-Bold.woff2') format('woff2'),
+         url('../fonts/Webfonts/fonts/woff/Dana-Bold.woff') format('woff');
+}
+@font-face {
+    font-family: dana;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Webfonts/fonts/woff2/Dana-Regular.woff2') format('woff2'),
+         url('../fonts/Webfonts/fonts/woff/Dana-Regular.woff') format('woff');
+}
+
+#aida-chatbot-container, 
+#aida-chatbot-container *,
+#aida-chatbot-container *::before,
+#aida-chatbot-container *::after {
+    box-sizing: border-box;
+    direction: ltr;
+    font-family: "dana" !important;
+}
+
+#aida-chatbot-container {
+    background-color: transparent;
+}
+
+/*todo chatbot */
+.chatbot-toggler {
+    position: fixed;
+    left: 40px;
+    bottom: 35px;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #00AF9E;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.show-chatbot .chatbot-toggler {
+    transform: rotate(-90deg);
+}
+.chatbot-toggler .img1 , .img2{
+    position: absolute;
+}
+.show-chatbot .chatbot-toggler .img1,
+.chatbot-toggler .img2 {
+    opacity: 0;
+}
+.show-chatbot .chatbot-toggler .img2 {
+    opacity: 1;
+}
+.chatbot {
+    transform: scale(0.5);
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    left: 40px;
+    bottom: 100px;
+    width: 420px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 15px;
+    transform-origin: bottom left;
+    box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+    transition: all 0.1s ease;
+    z-index: 1000;
+}
+.show-chatbot .chatbot {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+}
+.svg_bot {
+    width: 32px;
+    align-self: flex-end;
+    background: white;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 4px;
+    margin: 0 0 7px 10px;
+}
+.chatbot header {
+    background-color: #00AF9E;
+    padding: 16px 0;
+    text-align: center;
+    position: relative;
+}
+
+.chatbot header h2 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.4rem;
+}
+.chatbot-close {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    background-color: #00AF9E;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: none;
+    transform: translateY(-50%);
+}
+.clear-chat-history {
+    position: absolute;
+    right: 20px;
+    top: 30%;
+    background-color: #00AF9E;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.chatbot .chatbox {
+    max-height: 60vh;
+    height: 510px;
+    overflow-y: auto;
+    padding: 30px 20px 100px;
+}
+.chatbox .chat {
+    display: flex;
+}
+.chatbox .outgoing {
+    margin: 20px 0;
+    justify-content: flex-start;
+}
+.chatbox .incoming {
+    justify-content: flex-end;
+}
+.chatbox .chat p {
+    color: #fff;
+    max-width: 75%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    font-size: 0.95rem;
+    padding: 12px 16px;
+    border-radius: 10px 10px 10px 0px;
+    background-color: #00AF9E;
+    margin: 0;
+}
+.chatbot .chat p.error-mes {
+    color: rgb(185, 6, 6);
+    background-color: rgba(238, 151, 151, 0.635);
+}
+.chatbox .incoming p {
+    color: #000;
+    background-color: #f2f2f2;
+    border-radius: 10px 10px 0px 10px;
+}
+.chatbot .chat-input {
+    position: absolute;
+    bottom: 1vh;
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    background-color: #fff;
+    padding: 5px 20px;
+    border-top: 1px solid #ccc;
+}
+.chat-input textarea {
+    height: 55px;
+    width: 100%;
+    max-height: 180px;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+    resize: none;
+    padding: 16px 0 16px 15px;
+}
+.chat-input button {
+    background-color: white;
+    align-self: flex-end;
+    height: 55px;
+    line-height: 55px;
+    font-size: 1.35rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    visibility: hidden;
+}
+.chat-input textarea:valid ~ button {
+    visibility: visible;
+}
+
+@media only screen and (max-width: 480px) {
+    /*todo chatbot */
+    .chatbot {
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+    .chatbot .chatbox {
+        height: 90%;
+    }
+    .chatbot header button {
+        display: block;
+    }
+}
+@media only screen and (max-height: 480px) {
+    .chatbot-toggler {
+        bottom: 5px;
+    }
+    .chatbot {
+        left: 40px;
+        bottom: 60px;
+    }
+} 
