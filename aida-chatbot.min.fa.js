@@ -102,7 +102,7 @@
       #aida-chatbot-container *::after {
           box-sizing: border-box;
           direction: rtl;
-          font-family: dana  !important;
+          font-family: dana;
       }
 
       #aida-chatbot-container {

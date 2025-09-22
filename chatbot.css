@@ -47,7 +47,7 @@
 #aida-chatbot-container *::after {
     box-sizing: border-box;
     direction: ltr;
-    font-family: "dana" !important;
+    font-family: "dana";
 }
 
 #aida-chatbot-container {
