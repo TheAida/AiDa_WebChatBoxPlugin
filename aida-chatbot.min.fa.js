@@ -65,36 +65,36 @@
         font-family: dana;
         font-style: normal;
         font-weight: 500;
-        src: url('../fonts/Webfonts/fonts/woff2/Dana-Medium.woff2') format('woff2'),
-             url('../fonts/Webfonts/fonts/woff/Dana-Medium.woff') format('woff');
+        src: url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff2/Dana-Medium.woff2') format('woff2'),
+             url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff/Dana-Medium.woff') format('woff');
     }
     @font-face {
         font-family: dana;
         font-style: normal;
         font-weight: 600;
-        src: url('../fonts/Webfonts/fonts/woff2/Dana-DemiBold.woff2') format('woff2'),
-             url('../fonts/Webfonts/fonts/woff/Dana-DemiBold.woff') format('woff');
+        src: url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff2/Dana-DemiBold.woff2') format('woff2'),
+             url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff/Dana-DemiBold.woff') format('woff');
     }
     @font-face {
         font-family: dana;
         font-style: normal;
         font-weight: 800;
-        src: url('../fonts/Webfonts/fonts/woff2/Dana-ExtraBold.woff2') format('woff2'),
-             url('../fonts/Webfonts/fonts/woff/Dana-ExtraBold.woff') format('woff');
+        src: url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff2/Dana-ExtraBold.woff2') format('woff2'),
+             url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff/Dana-ExtraBold.woff') format('woff');
     }
     @font-face {
         font-family: dana;
         font-style: normal;
         font-weight: bold;
-        src: url('../fonts/Webfonts/fonts/woff2/Dana-Bold.woff2') format('woff2'),
-             url('../fonts/Webfonts/fonts/woff/Dana-Bold.woff') format('woff');
+        src: url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff2/Dana-Bold.woff2') format('woff2'),
+             url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff/Dana-Bold.woff') format('woff');
     }
     @font-face {
         font-family: dana;
         font-style: normal;
         font-weight: normal;
-        src: url('../fonts/Webfonts/fonts/woff2/Dana-Regular.woff2') format('woff2'),
-             url('../fonts/Webfonts/fonts/woff/Dana-Regular.woff') format('woff');
+        src: url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff2/Dana-Regular.woff2') format('woff2'),
+             url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff/Dana-Regular.woff') format('woff');
     }
       #aida-chatbot-container, 
       #aida-chatbot-container *,
