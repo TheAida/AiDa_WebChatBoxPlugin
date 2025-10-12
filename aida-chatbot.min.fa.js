@@ -287,6 +287,7 @@
           }
           .chatbot .chatbox {
               height: 90%;
+              max-height: 90%;
           }
           .chatbot header button {
               display: block;
