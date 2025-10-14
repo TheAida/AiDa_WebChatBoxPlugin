@@ -280,6 +280,7 @@
           /*todo chatbot */
           .chatbot {
               right: 0px;
+              left: 0px;
               bottom: 0px;
               width: 100%;
               height: 100%;
@@ -287,11 +288,16 @@
           }
           .chatbot .chatbox {
               height: 90%;
-              max-height: 90%;
+              max-height: 80vh;
           }
           .chatbot header button {
               display: block;
           }
+          body:has(.show-chatbot) {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+        }
       }
       @media only screen and (max-height: 480px) {
           .chatbot-toggler {
