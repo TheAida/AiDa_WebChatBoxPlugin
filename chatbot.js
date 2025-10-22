@@ -82,7 +82,8 @@ const uuidCookie = setUUIDCookie("aida-chatbot-uuid");
 
 
 // Function to handle bot response
-function handleBotResponse(chatElement) {
+function handleBotResponse(chatElement, retryCount = 0) {
+    const MAX_RETRIES = 2;
     let messageElement = chatElement.querySelector("p");
     
     fetch(`https://api.aidasales.ir/api/v1/conversation/chatbox/${apiKey}/message`, {
@@ -99,13 +100,36 @@ function handleBotResponse(chatElement) {
     .then(response => response.json())
     .then(data => {
         let response = data.response;
-        messageElement.textContent = response;
-        chatHistory.push({sender: "bot", text: response});
-        localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+        
+        // Check if response is null or empty
+        if (!response || response === null || response.trim() === "") {
+            if (retryCount < MAX_RETRIES) {
+                // Retry silently in the background after 1 second
+                setTimeout(() => {
+                    handleBotResponse(chatElement, retryCount + 1);
+                }, 1000);
+            } else {
+                // All retries failed
+                messageElement.classList.add("error-mes");
+                messageElement.textContent = "No response received. Please try again.";
+            }
+        } else {
+            // Valid response received
+            messageElement.textContent = response;
+            chatHistory.push({sender: "bot", text: response});
+            localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+        }
     })
     .catch(() => {
-        messageElement.classList.add("error-mes");
-        messageElement.textContent = "There was a problem. Please try again later.";
+        if (retryCount < MAX_RETRIES) {
+            // Retry silently in the background after 1 second
+            setTimeout(() => {
+                handleBotResponse(chatElement, retryCount + 1);
+            }, 1000);
+        } else {
+            messageElement.classList.add("error-mes");
+            messageElement.textContent = "There was a problem. Please try again later.";
+        }
     })
     .finally(() => {
         chatbox.scrollTo(0, chatbox.scrollHeight);

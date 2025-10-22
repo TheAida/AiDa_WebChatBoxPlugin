@@ -338,6 +338,7 @@
                 </button>
             </div>
         </section>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <script>
             // Get API key from script tag or use default
             let scriptTag = document.currentScript || document.querySelector('script[src*="chatbot.js"]');
@@ -423,7 +424,8 @@
 
     
             // Function to handle bot response
-            function handleBotResponse(chatElement) {
+            function handleBotResponse(chatElement, retryCount = 0) {
+                const MAX_RETRIES = 2;
                 let messageElement = chatElement.querySelector("p");
     
                 fetch(`https://api.aidasales.ir/api/v1/conversation/chatbox/${apiKey}/message`, {
@@ -440,13 +442,36 @@
                 .then(response => response.json())
                 .then(data => {
                     let response = data.response;
-                    messageElement.textContent = response;
-                    chatHistory.push({sender: "bot", text: response});
-                    localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+                    
+                    // Check if response is null or empty
+                    if (!response || response === null || response.trim() === "") {
+                        if (retryCount < MAX_RETRIES) {
+                            // Retry silently in the background after 1 second
+                            setTimeout(() => {
+                                handleBotResponse(chatElement, retryCount + 1);
+                            }, 1000);
+                        } else {
+                            // All retries failed
+                            messageElement.classList.add("error-mes");
+                            messageElement.textContent = "No response received. Please try again.";
+                        }
+                    } else {
+                        // Valid response received - parse markdown and display
+                        messageElement.innerHTML = marked.parse(response);
+                        chatHistory.push({sender: "bot", text: response});
+                        localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+                    }
                 })
                 .catch(() => {
-                    messageElement.classList.add("error-mes");
-                    messageElement.textContent = "There was a problem. Please try again later.";
+                    if (retryCount < MAX_RETRIES) {
+                        // Retry silently in the background after 1 second
+                        setTimeout(() => {
+                            handleBotResponse(chatElement, retryCount + 1);
+                        }, 1000);
+                    } else {
+                        messageElement.classList.add("error-mes");
+                        messageElement.textContent = "There was a problem. Please try again later.";
+                    }
                 })
                 .finally(() => {
                     chatbox.scrollTo(0, chatbox.scrollHeight);
@@ -511,6 +536,13 @@
             // Load chat history on page load
             chatHistory.forEach(chat => {
                 let chatElement = createChatElement(chat.text || "There is a problem.", chat.sender === "user" ? "outgoing" : "incoming");
+                // If it's a bot message, parse markdown
+                if (chat.sender === "bot") {
+                    let messageElement = chatElement.querySelector("p");
+                    if (messageElement) {
+                        messageElement.innerHTML = marked.parse(chat.text);
+                    }
+                }
                 chatbox.appendChild(chatElement);
             });
             chatbox.scrollTo(0, chatbox.scrollHeight); 
