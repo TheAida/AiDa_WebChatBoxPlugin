@@ -75,48 +75,12 @@
         This set of fonts are used in this project under the license: (17KXIWC4)
         ---------------------------------------------------------------------
     */
-    @font-face {
-        font-family: dana;
-        font-style: normal;
-        font-weight: 500;
-        src: url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff2/Dana-Medium.woff2') format('woff2'),
-             url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff/Dana-Medium.woff') format('woff');
-    }
-    @font-face {
-        font-family: dana;
-        font-style: normal;
-        font-weight: 600;
-        src: url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff2/Dana-DemiBold.woff2') format('woff2'),
-             url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff/Dana-DemiBold.woff') format('woff');
-    }
-    @font-face {
-        font-family: dana;
-        font-style: normal;
-        font-weight: 800;
-        src: url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff2/Dana-ExtraBold.woff2') format('woff2'),
-             url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff/Dana-ExtraBold.woff') format('woff');
-    }
-    @font-face {
-        font-family: dana;
-        font-style: normal;
-        font-weight: bold;
-        src: url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff2/Dana-Bold.woff2') format('woff2'),
-             url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff/Dana-Bold.woff') format('woff');
-    }
-    @font-face {
-        font-family: dana;
-        font-style: normal;
-        font-weight: normal;
-        src: url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff2/Dana-Regular.woff2') format('woff2'),
-             url('https://cdn.aidasales.ir/fonts/Webfonts/fonts/woff/Dana-Regular.woff') format('woff');
-    }
       #aida-chatbot-container, 
       #aida-chatbot-container *,
       #aida-chatbot-container *::before,
       #aida-chatbot-container *::after {
           box-sizing: border-box;
           direction: rtl;
-          font-family: dana;
       }
 
       #aida-chatbot-container {
@@ -341,7 +305,7 @@
     </button>
     <section class="chatbot_AIDACHATBOX" lang="fa">
       <header>
-        <h2>چت باکس</h2>
+        <h2>آیدا</h2>
         <button class="chatbot-close_AIDACHATBOX">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" class="img3_AIDACHATBOX" class="img2_AIDACHATBOX" viewBox="0 0 24 24" version="1.1" fill="#ffffff" stroke="#ffffff">
             <g id="SVGRepo_bgCarrier" stroke-width="0"/>
