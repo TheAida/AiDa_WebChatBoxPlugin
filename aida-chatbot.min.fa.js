@@ -1,5 +1,7 @@
 !function(){let scriptTag = document.currentScript || document.querySelector('script[src*="aida-chatbot.min.js"]');
     let apiKey = scriptTag ? scriptTag.getAttribute('data-aida-api-key') : '47';
+    let positionChatbox = scriptTag ? scriptTag.getAttribute('data-position-chatbox') : 'right';
+    let initialState = scriptTag ? scriptTag.getAttribute('data-initial-state') : 'closed';
     function getCookie(cookieName) {
         const name = cookieName + "=";
         const decodedCookie = decodeURIComponent(document.cookie);
@@ -66,7 +68,12 @@
         return text;
     }
     
-    let t=document.createElement("div");t.id="aida-chatbot-container",t.dir="rtl",t.innerHTML=`
+    let t=document.createElement("div");t.id="aida-chatbot-container",t.dir="rtl";
+    // Apply initial state class if open
+    if(initialState === 'open') {
+        t.classList.add('show-chatbot');
+    }
+    t.innerHTML=`
     <style>
     /*
         Dana fonts are considered a proprietary software. To gain information about the laws regarding
@@ -90,7 +97,7 @@
       /*todo chatbot */
       .chatbot-toggler_AIDACHATBOX {
           position: fixed;
-          right: 40px;
+          ${positionChatbox === 'left' ? 'left: 40px;' : 'right: 40px;'}
           bottom: 35px;
           height: 50px;
           width: 50px;
@@ -122,13 +129,13 @@
           opacity: 0;
           pointer-events: none;
           position: fixed;
-          right: 40px;
+          ${positionChatbox === 'left' ? 'left: 40px;' : 'right: 40px;'}
           bottom: 100px;
           width: 420px;
           overflow: hidden;
           background-color: #fff;
           border-radius: 15px;
-          transform-origin: bottom right;
+          transform-origin: bottom ${positionChatbox === 'left' ? 'left' : 'right'};
           box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
           transition: all 0.1s ease;
           z-index: 1000;
