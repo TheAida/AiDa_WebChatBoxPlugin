@@ -110,6 +110,7 @@
           outline: none;
           cursor: pointer;
           transition: all 0.2s ease;
+          z-index: 9999;
       }
       .show-chatbot .chatbot-toggler_AIDACHATBOX {
           transform: rotate(90deg);
@@ -138,7 +139,7 @@
           transform-origin: bottom ${positionChatbox === 'left' ? 'left' : 'right'};
           box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
           transition: all 0.1s ease;
-          z-index: 1000;
+          z-index: 9999;
       }
       .show-chatbot .chatbot_AIDACHATBOX {
           transform: scale(1);
