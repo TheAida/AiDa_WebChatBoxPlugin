@@ -230,12 +230,12 @@
       }
       .chatbot_AIDACHATBOX .chat-input_AIDACHATBOX {
           position: absolute;
-          bottom: 1vh;
+          bottom: 0vh;
           width: 100%;
           display: flex;
           gap: 5px;
           background-color: #fff;
-          padding: 5px 20px;
+          padding: 8px 20px;
           border-top: 1px solid #ccc;
       }
       .chat-input_AIDACHATBOX textarea {
