@@ -192,7 +192,8 @@
           max-height: 60vh;
           height: 510px;
           overflow-y: auto;
-          padding: 30px 20px 100px;
+          padding: 20px 20px;
+          margin:0;
       }
       .chatbox_AIDACHATBOX .chat_AIDACHATBOX {
           display: flex;
@@ -215,6 +216,7 @@
           border-radius: 10px 10px 0 10px;
           background-color: #00AF9E;
           margin: 0;
+          line-height: 1.6;
       }
       .chatbot_AIDACHATBOX .chat_AIDACHATBOX p.error-mes {
           color: rgb(185, 6, 6);
@@ -224,12 +226,12 @@
           color: #000;
           background-color: #f2f2f2;
           border-radius: 10px 10px 10px 0;
+          line-height: 1.6;
       }
       .chatbox_AIDACHATBOX .incoming_AIDACHATBOX p p {
         padding:0;
       }
       .chatbot_AIDACHATBOX .chat-input_AIDACHATBOX {
-          position: absolute;
           bottom: 0vh;
           width: 100%;
           display: flex;
