@@ -86,239 +86,233 @@
       #aida-chatbot-container *,
       #aida-chatbot-container *::before,
       #aida-chatbot-container *::after {
-          box-sizing: border-box !important;
-          direction: rtl !important;
+          box-sizing: border-box;
+          direction: rtl;
       }
 
       #aida-chatbot-container {
-          background-color: transparent !important;
+          background-color: transparent;
       }
 
       /*todo chatbot */
       .chatbot-toggler_AIDACHATBOX {
-          position: fixed !important;
-          ${positionChatbox === 'left' ? 'left: 40px !important;' : 'right: 40px !important;'}
-          bottom: 35px !important;
-          height: 50px !important;
-          width: 50px !important;
-          display: flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          background-color: #00AF9E !important;
-          border-radius: 50% !important;
-          border: none !important;
-          outline: none !important;
-          cursor: pointer !important;
-          transition: all 0.2s ease !important;
-          z-index: 9999 !important;
-          padding: 1px 6px !important;
+          position: fixed;
+          ${positionChatbox === 'left' ? 'left: 40px;' : 'right: 40px;'}
+          bottom: 35px;
+          height: 50px;
+          width: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #00AF9E;
+          border-radius: 50%;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          z-index: 9999;
       }
       .show-chatbot .chatbot-toggler_AIDACHATBOX {
-          transform: rotate(90deg) !important;
+          transform: rotate(90deg);
       }
       .chatbot-toggler_AIDACHATBOX .img1_AIDACHATBOX , .img2_AIDACHATBOX{
-          position: absolute !important;
+          position: absolute;
       }
       .show-chatbot .chatbot-toggler_AIDACHATBOX .img1_AIDACHATBOX,
       .chatbot-toggler_AIDACHATBOX .img2_AIDACHATBOX {
-          opacity: 0 !important;
+          opacity: 0;
       }
       .show-chatbot .chatbot-toggler_AIDACHATBOX .img2_AIDACHATBOX {
-          opacity: 1 !important;
+          opacity: 1;
       }
       .chatbot_AIDACHATBOX {
-          transform: scale(0.5) !important;
-          opacity: 0 !important;
-          pointer-events: none !important;
-          position: fixed !important;
-          ${positionChatbox === 'left' ? 'left: 40px !important;' : 'right: 40px !important;'}
-          bottom: 100px !important;
-          width: 420px !important;
-          overflow: hidden !important;
-          background-color: #fff !important;
-          border-radius: 15px !important;
-          transform-origin: bottom ${positionChatbox === 'left' ? 'left' : 'right'} !important;
-          box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5) !important;
-          transition: all 0.1s ease !important;
-          z-index: 9999 !important;
+          transform: scale(0.5);
+          opacity: 0;
+          pointer-events: none;
+          position: fixed;
+          ${positionChatbox === 'left' ? 'left: 40px;' : 'right: 40px;'}
+          bottom: 100px;
+          width: 420px;
+          overflow: hidden;
+          background-color: #fff;
+          border-radius: 15px;
+          transform-origin: bottom ${positionChatbox === 'left' ? 'left' : 'right'};
+          box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+          transition: all 0.1s ease;
+          z-index: 9999;
       }
       .show-chatbot .chatbot_AIDACHATBOX {
-          transform: scale(1) !important;
-          opacity: 1 !important;
-          pointer-events: auto !important;
+          transform: scale(1);
+          opacity: 1;
+          pointer-events: auto;
 
       }
       .svg_bot_AIDACHATBOX {
-          width: 32px !important;
-          align-self: flex-end !important;
-          background: white !important;
-          text-align: center !important;
-          line-height: 32px !important;
-          border-radius: 4px !important;
-          margin: 0 10px 7px 0 !important;
+          width: 32px;
+          align-self: flex-end;
+          background: white;
+          text-align: center;
+          line-height: 32px;
+          border-radius: 4px;
+          margin: 0 10px 7px 0;
       }
       .chatbot_AIDACHATBOX header {
-          background-color: #00AF9E !important;
-          padding: 16px 0 !important;
-          text-align: center !important;
-          position: relative !important;
+          background-color: #00AF9E;
+          padding: 16px 0;
+          text-align: center;
+          position: relative;
       }
 
       .chatbot_AIDACHATBOX header h2 {
-          margin: 0 !important;
-          color: #fff !important;
-          font-size: 1.4rem !important;
+          margin: 0;
+          color: #fff;
+          font-size: 1.4rem;
       }
       .chatbot-close_AIDACHATBOX {
-          position: absolute !important;
-          right: 20px !important;
-          top: 50% !important;
-          background-color: #00AF9E !important;
-          border: none !important;
-          outline: none !important;
-          cursor: pointer !important;
-          display: none !important;
-          transform: translateY(-50%) !important;
+          position: absolute;
+          right: 20px;
+          top: 50%;
+          background-color: #00AF9E;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          display: none;
+          transform: translateY(-50%);
       }
       .clear-chat-history_AIDACHATBOX {
-          position: absolute !important;
-          left: 20px !important;
-          top: 30% !important;
-          background-color: #00AF9E !important;
-          border: none !important;
-          outline: none !important;
-          cursor: pointer !important;
-          padding: 1px 6px !important;
+          position: absolute;
+          left: 20px;
+          top: 30%;
+          background-color: #00AF9E;
+          border: none;
+          outline: none;
+          cursor: pointer;
       }
       .chatbot_AIDACHATBOX .chatbox_AIDACHATBOX {
-          max-height: 60vh !important;
-          height: 510px !important;
-          overflow-y: auto !important;
-          padding: 20px 20px !important;
-          margin:0 !important;
+          max-height: 60vh;
+          height: 510px;
+          overflow-y: auto;
+          padding: 20px 20px;
+          margin:0;
       }
       .chatbox_AIDACHATBOX .chat_AIDACHATBOX {
-          display: flex !important;
+          display: flex;
       }
       .chatbox_AIDACHATBOX .outgoing {
-          margin: 20px 0 !important;
-          justify-content: flex-start !important;
+          margin: 20px 0;
+          justify-content: flex-start;
       }
       .chatbox_AIDACHATBOX .incoming_AIDACHATBOX {
-          justify-content: flex-end !important;
+          justify-content: flex-end;
       }
       .chatbox_AIDACHATBOX .chat_AIDACHATBOX p {
-          color: #fff !important;
-          max-width: 75% !important;
-          word-wrap: break-word !important;
-          overflow-wrap: break-word !important;
-          white-space: pre-wrap !important;
-          font-size: 0.95rem !important;
-          padding: 12px 16px !important;
-          border-radius: 10px 10px 0 10px !important;
-          background-color: #00AF9E !important;
-          margin: 0 !important;
-          line-height: 1.6 !important;
+          color: #fff;
+          max-width: 75%;
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+          white-space: pre-wrap;
+          font-size: 0.95rem;
+          padding: 12px 16px;
+          border-radius: 10px 10px 0 10px;
+          background-color: #00AF9E;
+          margin: 0;
+          line-height: 1.6;
       }
       .chatbot_AIDACHATBOX .chat_AIDACHATBOX p.error-mes {
-          color: rgb(185, 6, 6) !important;
-          background-color: rgba(238, 151, 151, 0.635) !important;
+          color: rgb(185, 6, 6);
+          background-color: rgba(238, 151, 151, 0.635);
       }
       .chatbox_AIDACHATBOX .incoming_AIDACHATBOX p {
-          color: #000 !important;
-          background-color: #f2f2f2 !important;
-          border-radius: 10px 10px 10px 0 !important;
-          line-height: 1.6 !important;
+          color: #000;
+          background-color: #f2f2f2;
+          border-radius: 10px 10px 10px 0;
+          line-height: 1.6;
       }
       .chatbox_AIDACHATBOX .incoming_AIDACHATBOX p p {
-        padding:0 !important;
+        padding:0;
       }
       .chatbot_AIDACHATBOX .chat-input_AIDACHATBOX {
-          bottom: 0vh !important;
-          width: 100% !important;
-          display: flex !important;
-          gap: 5px !important;
-          background-color: #fff !important;
-          padding: 8px 20px !important;
-          border-top: 1px solid #ccc !important;
+          bottom: 0vh;
+          width: 100%;
+          display: flex;
+          gap: 5px;
+          background-color: #fff;
+          padding: 8px 20px;
+          border-top: 1px solid #ccc;
       }
       .chat-input_AIDACHATBOX textarea {
-          height: 55px !important;
-          width: 100% !important;
-          max-height: 180px !important;
-          border: none !important;
-          outline: none !important;
-          font-size: 0.95rem !important;
-          resize: none !important;
-          padding: 16px 15px 16px 0 !important;
+          height: 55px;
+          width: 100%;
+          max-height: 180px;
+          border: none;
+          outline: none;
+          font-size: 0.95rem;
+          resize: none;
+          padding: 16px 15px 16px 0;
       }
       .chat-input_AIDACHATBOX button {
-          background-color: white !important;
-          align-self: flex-end !important;
-          height: 55px !important;
-          line-height: 55px !important;
-          font-size: 1.35rem !important;
-          cursor: pointer !important;
-          border: none !important;
-          outline: none !important;
-          visibility: hidden !important;
+          background-color: white;
+          align-self: flex-end;
+          height: 55px;
+          line-height: 55px;
+          font-size: 1.35rem;
+          cursor: pointer;
+          border: none;
+          outline: none;
+          visibility: hidden;
       }
       .chat-input_AIDACHATBOX textarea:valid ~ button {
-          visibility: visible !important;
-      }
-
-      .send-btn_AIDACHATBOX {
-          padding: 1px 6px !important;
+          visibility: visible;
       }
       
       /* Markdown link button styles */
       #aida-chatbot-container .markdown-link-button {
-          width: 100% !important;
-          border: 1px solid gray !important;
-          padding: 8px 12px !important;
-          background-color: transparent !important;
-          cursor: pointer !important;
-          text-align: center !important;
-          font-size: inherit !important;
-          font-family: inherit !important;
-          margin: 5px 0 !important;
-          border-radius: 4px !important;
-          transition: background-color 0.2s ease !important;
+          width: 100%;
+          border: 1px solid gray;
+          padding: 8px 12px;
+          background-color: transparent;
+          cursor: pointer;
+          text-align: center;
+          font-size: inherit;
+          font-family: inherit;
+          margin: 5px 0;
+          border-radius: 4px;
+          transition: background-color 0.2s ease;
       }
       #aida-chatbot-container .markdown-link-button:hover {
-          background-color: #f0f0f0 !important;
+          background-color: #f0f0f0;
       }
 
       @media only screen and (max-width: 480px) {
           /*todo chatbot */
           .chatbot_AIDACHATBOX {
-              right: 0px !important;
-              left: 0px !important;
-              bottom: 0px !important;
-              width: 100% !important;
-              height: 100% !important;
-              border-radius: 0 !important;
+              right: 0px;
+              left: 0px;
+              bottom: 0px;
+              width: 100%;
+              height: 100%;
+              border-radius: 0;
           }
           .chatbot_AIDACHATBOX .chatbox_AIDACHATBOX {
-              height: 90% !important;
-              max-height: 80vh !important;
+              height: 90%;
+              max-height: 80vh;
           }
           .chatbot_AIDACHATBOX header button {
-              display: block !important;
+              display: block;
           }
           body:has(.show-chatbot) {
-            overflow: hidden !important;
-            position: fixed !important;
-            width: 100% !important;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
         }
       }
       @media only screen and (max-height: 480px) {
           .chatbot-toggler_AIDACHATBOX {
-              bottom: 5px !important;
+              bottom: 5px;
           }
           .chatbot_AIDACHATBOX {
-              right: 40px !important;
-              bottom: 60px !important;
+              right: 40px;
+              bottom: 60px;
           }
       }
     </style>
@@ -373,12 +367,12 @@
         </button>
       </div>
     </section>
-  `,document.body.appendChild(t);let e=t.querySelector(".chat-input_AIDACHATBOX textarea"),o=t.querySelector(".send-btn_AIDACHATBOX"),a=t.querySelector(".chatbox_AIDACHATBOX"),i=t.querySelector(".chatbot-toggler_AIDACHATBOX"),r=t.querySelector(".chatbot-close_AIDACHATBOX"),s=t.querySelector(".clear-chat-history_AIDACHATBOX"),n=JSON.parse(localStorage.getItem("chatHistory"))||[],c="",l=e.scrollHeight,h=(t,e)=>{let o=document.createElement("li");o.classList.add("chat_AIDACHATBOX",e);let a="outgoing"===e?`<p>${t}</p>`:`<p>${"incoming_AIDACHATBOX"===e?parseMarkdown(t):t}</p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP4AAAE5AgMAAADNYnV6AAADKGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuMWI2NWE3OWI0LCAyMDIyLzA2LzEzLTIyOjAxOjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjMuNSAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEM0FDRkEwNDRGNkMxMUYwQjRGM0ZGQzZGQUQwMjc1NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozMjM3RDgwODRGNkYxMUYwQjRGM0ZGQzZGQUQwMjc1NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQzQUNGQTAyNEY2QzExRjBCNEYzRkZDNkZBRDAyNzU0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQzQUNGQTAzNEY2QzExRjBCNEYzRkZDNkZBRDAyNzU0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW
-  5kPSJyIj8+wSK1rgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAJUExURSMfICEpKQqvn8uancoAAAADdFJOU/AD2OyXvisAAA1SSURBVHja1Zy9jiS3Ecf/tdgSoI3mgKEBOXLig7VPUQbkvA6oEixFigR4n2IewYkE30UTHfb4lA740c1usrtnVoKtSW53tvvXxWKxvsg++M7HHt+FjT8rdu4XAKD7AQIAQLgXoOn+DRF2AMAjABLcCVCQAY/w8Ri2AYArHglB+C6AIrieH0nYcBdA4C5nJiW/DwC4izEMLuEOgIHcYSSOoHwHQMHuZCRBgtEdADmxGxlpUB4qYQsACW7kpGw0VMIGwEiCGzsZG/nIEjYAynBXdjJ2uN4OEIa7Bicjh4+0uAUIVAESRlrcAMDI052/AUDDaBrGACNjd3FHUqHeDOAMkAzgGwHKVQJxuwugRQJxI7ebAUHZHb8RwGlkSWOAzADhLoC3AP+jA/DHlMDeKkFdTP8XErwR4HcC6G2AkAG4G+A0dyg3AzQ4sldODuVtAL
+  `,document.body.appendChild(t);let e=t.querySelector(".chat-input_AIDACHATBOX textarea"),o=t.querySelector(".send-btn_AIDACHATBOX"),a=t.querySelector(".chatbox_AIDACHATBOX"),i=t.querySelector(".chatbot-toggler_AIDACHATBOX"),r=t.querySelector(".chatbot-close_AIDACHATBOX"),s=t.querySelector(".clear-chat-history_AIDACHATBOX"),n=JSON.parse(localStorage.getItem("chatHistory"))||[],c="",l=e.scrollHeight,h=(t,e)=>{let o=document.createElement("li");o.classList.add("chat_AIDACHATBOX",e);let a="outgoing"===e?`<p>${t}</p>`:`<p>${"incoming_AIDACHATBOX"===e?parseMarkdown(t):t}</p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP4AAAE5AgMAAADNYnV6AAADKGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuMWI2NWE3OWI0LCAyMDIyLzA2LzEzLTIyOjAxOjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjMuNSAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEM0FDRkEwNDRGNkMxMUYwQjRGM0ZGQzZGQUQwMjc1NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozMjM3RDgwODRGNkYxMUYwQjRGM0ZGQzZGQUQwMjc1NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQzQUNGQTAyNEY2QzExRjBCNEYzRkZDNkZBRDAyNzU0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQzQUNGQTAzNEY2QzExRjBCNEYzRkZDNkZBRDAyNzU0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZ
+  W5kPSJyIj8+wSK1rgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAJUExURSMfICEpKQqvn8uancoAAAADdFJOU/AD2OyXvisAAA1SSURBVHja1Zy9jiS3Ecf/tdgSoI3mgKEBOXLig7VPUQbkvA6oEixFigR4n2IewYkE30UTHfb4lA740c1usrtnVoKtSW53tvvXxWKxvsg++M7HHt+FjT8rdu4XAKD7AQIAQLgXoOn+DRF2AMAjABLcCVCQAY/w8Ri2AYArHglB+C6AIrieH0nYcBdA4C5nJiW/DwC4izEMLuEOgIHcYSSOoHwHQMHuZCRBgtEdADmxGxlpUB4qYQsACW7kpGw0VMIGwEiCGzsZG/nIEjYAynBXdjJ2uN4OEIa7Bicjh4+0uAUIVAESRlrcAMDI052/AUDDaBrGACNjd3FHUqHeDOAMkAzgGwHKVQJxuwugRQJxI7ebAUHZHb8RwGlkSWOAzADhLoC3AP+jA/DHlMDeKkFdTP8XErwR4HcC6G2AkAG4G+A0dyg3AzQ4sldODuVtAL
           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
-          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" class="svg_bot_AIDACHATBOX">`;return o.innerHTML=a,o},u=(chatEl,correlationId)=>{let pollInterval=null;const checkResult=()=>{fetch(`https://api.aidasales.ir/api/v1/conversation/chatbox/result/${correlationId}`,{method:"GET",headers:{"Content-Type":"application/json"}}).then(res=>res.json()).then(data=>{let e=chatEl.querySelector("p");if(data.status==="pending"){if(!pollInterval){pollInterval=setInterval(checkResult,5000)}}else{if(pollInterval){clearInterval(pollInterval);pollInterval=null}let o=data.response||data.message||"";if(!o||o.trim()===""){e.classList.add("error-mes"),e.textContent="پاسخی دریافت نشد. لطفا دوباره تلاش کنید."}else{let parsedHtml=parseMarkdown(o);e.innerHTML=parsedHtml,n.push({sender:"bot",text:o}),localStorage.setItem("chatHistory",JSON.stringify(n))}a.scrollTo(0,a.scrollHeight)}}).catch(()=>{if(pollInterval){clearInterval(pollInterval);pollInterval=null}let e=chatEl.querySelector("p");e.classList.add("error-mes"),e.textContent="مشکلی به وجود آمده است. بعداً امتحان کنید.",a.scrollTo(0,a.scrollHeight)})};checkResult()},p=(chatEl,retry=0)=>{const MAX_RETRIES=2;let e=chatEl.querySelector("p");fetch(`https://api.aidasales.ir/api/v1/conversation/chatbox/${apiKey}/message`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:c,thread_id:uuidCookie,username:uuidCookie})}).then(res=>res.json()).then(data=>{if(data.correlation_id){u(chatEl,data.correlation_id)}else{let o=data.response;if(!o||o===null||o.trim()===""){if(retry<MAX_RETRIES){setTimeout(()=>{p(chatEl,retry+1)},1000)}else{e.classList.add("error-mes"),e.textContent="پاسخی دریافت نشد. لطفا دوباره تلاش کنید."}}
+          cE4NBnDLC3At4swT0f/S9sw79OxPul9AAAAABJRU5ErkJggg==" class="svg_bot_AIDACHATBOX">`;return o.innerHTML=a,o},u=(chatEl,correlationId)=>{let pollInterval=null;const checkResult=()=>{fetch(`https://stage-api.aidasales.net/api/v1/conversation/chatbox/result/${correlationId}`,{method:"GET",headers:{"Content-Type":"application/json"}}).then(res=>res.json()).then(data=>{let e=chatEl.querySelector("p");if(data.status==="pending"){if(!pollInterval){pollInterval=setInterval(checkResult,5000)}}else{if(pollInterval){clearInterval(pollInterval);pollInterval=null}let o=data.response||data.message||"";if(!o||o.trim()===""){e.classList.add("error-mes"),e.textContent="پاسخی دریافت نشد. لطفا دوباره تلاش کنید."}else{let parsedHtml=parseMarkdown(o);e.innerHTML=parsedHtml,n.push({sender:"bot",text:o}),localStorage.setItem("chatHistory",JSON.stringify(n))}a.scrollTo(0,a.scrollHeight)}}).catch(()=>{if(pollInterval){clearInterval(pollInterval);pollInterval=null}let e=chatEl.querySelector("p");e.classList.add("error-mes"),e.textContent="مشکلی به وجود آمده است. بعداً امتحان کنید.",a.scrollTo(0,a.scrollHeight)})};checkResult()},p=(chatEl,retry=0)=>{const MAX_RETRIES=2;let e=chatEl.querySelector("p");fetch(`https://stage-api.aidasales.net/api/v1/conversation/chatbox/HW0OVODT52/message`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:c,thread_id:uuidCookie,username:uuidCookie})}).then(res=>res.json()).then(data=>{if(data.correlation_id){u(chatEl,data.correlation_id)}else{let o=data.response;if(!o||o===null||o.trim()===""){if(retry<MAX_RETRIES){setTimeout(()=>{p(chatEl,retry+1)},1000)}else{e.classList.add("error-mes"),e.textContent="پاسخی دریافت نشد. لطفا دوباره تلاش کنید."}}
           else{let parsedHtml=parseMarkdown(o);e.innerHTML=parsedHtml,n.push({sender:"bot",text:o}),localStorage.setItem("chatHistory",JSON.stringify(n))}}}).catch(()=>{if(retry<MAX_RETRIES){setTimeout(()=>{p(chatEl,retry+1)},1000)}else{e.classList.add("error-mes"),e.textContent="مشکلی به وجود آمده است. بعداً امتحان کنید."}}).finally(()=>a.scrollTo(0,a.scrollHeight))},d=()=>{if(!(c=e.value.trim()))return;let t=h(c,"outgoing");a.appendChild(t),n.push({sender:"user",text:c}),localStorage.setItem("chatHistory",JSON.stringify(n)),e.value="",e.style.height="55px",a.scrollTo(0,a.scrollHeight),setTimeout(()=>{let t=h("درحال تایپ...","incoming_AIDACHATBOX");a.appendChild(t),a.scrollTo(0,a.scrollHeight),p(t)},600)};e.addEventListener("input",()=>{e.style.height=`${l}px`,e.style.height=`${e.scrollHeight}px`}),e.addEventListener("keyup",t=>{"Enter"===t.key&&!t.shiftKey&&window.innerWidth>800&&(t.preventDefault(),d())}),o.addEventListener("click",d),i.addEventListener("click",()=>t.classList.toggle("show-chatbot")),r.addEventListener("click",()=>t.classList.toggle("show-chatbot")),s.addEventListener("click",()=>{n=[],localStorage.removeItem("chatHistory"),a.innerHTML=`<li class="chat_AIDACHATBOX incoming_AIDACHATBOX"><p class="bot-text_AIDACHATBOX">سلام به شما :) <br>چطور میتونم کمکتون کنم؟</p>
     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAP4AAAE5AgMAAADNYnV6AAADKGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuMWI2NWE3OWI0LCAyMDIyLzA2LzEzLTIyOjAxOjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjMuNSAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEM0FDRkEwNDRGNkMxMUYwQjRGM0ZGQzZGQUQwMjc1NCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozMjM3RDgwODRGNkYxMUYwQjRGM0ZGQzZGQUQwMjc1NCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQzQUNGQTAyNEY2QzExRjBCNEYzRkZDNkZBRDAyNzU0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQzQUNGQTAzNEY2QzExRjBCNEYzRkZDNkZBRDAyNzU0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+wSK1rgAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAJUExURSMf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
