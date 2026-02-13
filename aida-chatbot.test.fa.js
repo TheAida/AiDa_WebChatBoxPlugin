@@ -283,6 +283,29 @@
           background-color: #f0f0f0;
       }
 
+      .chat-aida-AIDACHATBOX {
+          display: flex !important;
+          align-item: center !important;
+          justify-content: center !important;
+          gap: 5px !important;
+      }
+      
+      .chat-aida-AIDACHATBOX img{
+          width: 25px !important;
+          hight: 15px !important;
+      }
+    
+      .chat-aida-AIDACHATBOX p{
+          font-size: 12px !important;
+          margin: 8px 0 5px 0 !important;
+      }
+
+      .aida_link_AIDACHATBOX {
+          text-decoration: none !important;
+          display: block !important;
+          color: black !important;
+      }
+
       @media only screen and (max-width: 480px) {
           /*todo chatbot */
           .chatbot_AIDACHATBOX {
@@ -356,6 +379,13 @@
           q9aQfZQ4yvuMl9OPw7AITaeHld28cOIO+KVwD7/xhwvQ1Q/ELekX+K8d/hFkDd+Ms7uQ/d6nr7FYxmYeBGQJ2/ejTx+fXg6wd1Z7AqMe1UdjdDhwBgPgt524CPA7QFaNoN9eMAkIRSsks5VuLHAYagwT/kbNVdT+OqdmRDbbEabnuTxrB4hwsbyhp9a4tTvLjlhah8zrcJy3LDuzwpD5jdMR3CPQbIecBs/zAMo34/uHIbY3Npd/htIpvOTM/DquEoQGkeXN5Nx/CPvo4ky4Y0bWTB3RwpeEsIG1lw922i2S8nrI4l7QLG+boc8wcb/9/DMY/UtTgbKaH3PtOo3uxWlZ1sncbSyxG3LjxOEvVIaOvXruhk+qOSx8cAP5Db9+t3677Hc0PZVwKtHADwFkD332vr67B0QtYDXNfOWzq8GzB7HWAPMJyE0QiPdTD0rYAp+9e9VHc0CXWjcBcwqj9ooKNjfSTFcBqWABrm7XwIMGqFTWNYKmkJGP6vJ/UU8TZAN4/V9a5YAsJG2ngEMOrFTZ1d2wEMM28eqPkgYMpWdgDYD2rbpS/th9VNwLClOlOubAJ4u/zqTNRBAB0EjAzRwtDWFoCRHY0fcgzgvyXAtgDyZoAfANAbAf67AvBWAB0B4PcE4NBnDLC3At4swT0f/S9sw79OxPul9AAAAABJRU5ErkJggg==" class="svg_bot_AIDACHATBOX">
         </li>
       </ul>
+      <a href="https://aidasales.ir" target="_blank" class="aida_link_AIDACHATBOX">
+        <div class="chat-aida-AIDACHATBOX">
+           <p>قدرت گرفته از</p>
+           <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTguNjYgMjg3LjUxIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzAwYWY5ZTt9PC9zdHlsZT48L2RlZnM+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMzI2LjIxLDE5OC4yMWMtMjMuOC43Ny00Mi45NSwxMi01NS44NSwzMi4yOC0xMiwxOC44NC0yNi42MywzNC41NS00Ny4wNiw0NC4zNmExMDkuNjgsMTA5LjY4LDAsMCwxLTQ3LjYyLDExLjMzYy01MC40NS4xOC00Ny42Ny4xLTk4LjEyLjA2LTEyLjcxLDAtMTYuNjgtNS40NS0xMy4xMy0xNy42NiwzLjQzLTExLjg0LDEzLTE4LjY3LDI2LjkzLTE4LjcsNDUuMy0uMDksMzcuMzctLjE5LDgyLjY3LDAsMjYuNDYuMTMsNDYuOS0xMSw2MC44OS0zMi45LDEzLTIwLjMyLDI5LjIyLTM2LjQ1LDUxLjQ3LTQ2LjA2YTEwNC44NywxMDQuODcsMCwwLDEsNDEuMTgtOWM2Mi4yOS0uMjksNTcuMDUtLjE2LDExOS4zNS0uMSwxNiwwLDI0LjI4LDExLDE5LjM0LDI1LjMxLTIuNTksNy40OS04LjYsMTEuMDktMTkuMTgsMTEuMTFDNDE1LjY4LDE5OC4zNywzNTcuNTgsMTk3LjIxLDMyNi4yMSwxOTguMjFaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNTc2Ljg3LDY4LjYyYzcuMzMsMTEuODMsMTguMTgsMTYuMzksMzAuMDYsMTMuMSwxMi4yNi0zLjQsMTQuOC05LjYzLDguMTMtMjAuNDVsLTguMjMtMTNjLTEyLTE4Ljg1LTIwLjczLTI3LTQxLjE2LTM2LjhBMTA5Ljg2LDEwOS44NiwwLDAsMCw1MTguMDUuMTFDNDY3LjYtLjA3LDQ3MC4zOCwwLDQxOS45My4wNWMtMTIuNzEsMC0xNi42OCw1LjQ1LTEzLjEzLDE3LjY2LDMuNDMsMTEuODQsMTMsMTguNjcsMjYuOTMsMTguNyw0NS4zLjA5LDM3LjM3LjE5LDgyLjY3LDAsMjYuNDYtLjEzLDQ2LjksMTEuMDUsNjAuODksMzIuOSIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTI4Ny41OSwxNDdjLTEzLDQuMzctMjMuNCw5LjM2LTMyLjYyLDE2LjQ4LTMuMzgsMi42MS01LjMzLDEuODItNy40OC0xLjIzLTQtNS42Ni04LjQ0LTExLTEyLjE3LTE2Ljg3cS0yMi0zNC4zMi02Mi41Ni0zNC41NGMtNDUuMjgtLjE3LTM3LjMzLDAtODIuNjItLjA4LTE1LjU2LDAtMjYtOS0yNy43OC0yMy4zMi0xLjA5LTksMi44NS0xNCwxMS44OS0xNCw1My43OC0uMDcsNTQuMzQtLjkzLDEwOC4wOC40MiwzNS42Ni45LDYzLjc4LDE4LjI4LDgzLjg4LDQ3Ljc4QzI3Mi4yNywxMzAuNTYsMjc4LDEzOS41NiwyODcuNTksMTQ
+           3WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTAsMTc5LjM3cTAtNDYuMzIsMC05Mi42NGMwLTEzLDUuNy0xNy4xNiwxOC4wNS0xMy4zOCwxMS40OSwzLjUyLDE5LjI4LDEzLjcsMTkuMzIsMjYuODVxLjI3LDc5LjE0LDAsMTU4LjI2YzAsMTQuMTEtOC42OCwyNC41Ny0yMS41LDI3LjUyQzUuMzgsMjg4LjQuMDcsMjg0LjM2LDAsMjczLjU1LDAsMjQyLjE2LDAsMjEwLjc2LDAsMTc5LjM3WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQ5My4zNiwxNzkuMzdxMC00Ni4zMiwwLTkyLjY0YzAtMTMsNS43LTE3LjE2LDE4LjA1LTEzLjM4LDExLjQ5LDMuNTIsMTkuMjgsMTMuNywxOS4zMiwyNi44NXEuMjgsNzkuMTQsMCwxNTguMjZjLS4wNSwxNC4xMS04LjY3LDI0LjU3LTIxLjUsMjcuNTItMTAuNTEsMi40Mi0xNS44Mi0xLjYyLTE1Ljg1LTEyLjQzQzQ5My4zMSwyNDIuMTYsNDkzLjM2LDIxMC43Niw0OTMuMzYsMTc5LjM3WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQzMy4yMiwyNTAuNjlINDA2LjExdjBsLTM1LjY2LDBIMzY4bC0xMS4yNiwwYy0xMy45MSwwLTIzLjQ5LDcuMjYtMjYuOTMsMTkuMS0zLjU0LDEyLjIyLjQyLDE3LjY1LDEzLjE0LDE3LjY2bDI0LjksMGg2NS40YTE4LjQxLDE4LjQxLDAsMCwwLDAtMzYuODJaIi8+PC9zdmc+">
+        </div>
+      </a>
       <div class="chat-input_AIDACHATBOX">
         <textarea placeholder="پیام مورد نظر خود را وارد کنید..." required></textarea>
         <button class="send-btn_AIDACHATBOX">
