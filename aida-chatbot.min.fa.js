@@ -317,14 +317,46 @@
           .chatbot_AIDACHATBOX {
               right: 0px !important;
               left: 0px !important;
-              bottom: 0px !important;
+              top: 0 !important;
+              bottom: 0 !important;
               width: 100% !important;
-              height: 100% !important;
+              height: 100vh !important;
+              height: 100dvh !important;
+              max-height: 100vh !important;
+              max-height: 100dvh !important;
               border-radius: 0 !important;
+              display: flex !important;
+              flex-direction: column !important;
+          }
+          .chatbot_AIDACHATBOX header {
+              flex-shrink: 0 !important;
           }
           .chatbot_AIDACHATBOX .chatbox_AIDACHATBOX {
-              height: 90% !important;
-              max-height: 80vh !important;
+              flex: 1 1 0 !important;
+              min-height: 0 !important;
+              height: auto !important;
+              max-height: none !important;
+              overflow-y: auto !important;
+              -webkit-overflow-scrolling: touch !important;
+              padding-bottom: 160px !important;
+          }
+          .chatbot_AIDACHATBOX .aida_link_AIDACHATBOX {
+              position: fixed !important;
+              left: 0 !important;
+              right: 0 !important;
+              bottom: 71px !important;
+              z-index: 10 !important;
+              flex-shrink: 0 !important;
+              margin-top: auto !important;
+              background-color: #fff !important;
+          }
+          .chatbot_AIDACHATBOX .chat-input_AIDACHATBOX {
+              position: fixed !important;
+              left: 0 !important;
+              right: 0 !important;
+              bottom: 0 !important;
+              z-index: 10 !important;
+              flex-shrink: 0 !important;
           }
           .chatbot_AIDACHATBOX header button {
               display: block !important;
