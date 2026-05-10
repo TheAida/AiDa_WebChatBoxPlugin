@@ -473,57 +473,9 @@
               bottom: 5px !important;
           }
           .chatbot_AIDACHATBOX {
-              right: 0px !important;
-              left: 0px !important;
-              top: 0 !important;
-              bottom: 0 !important;
-              width: 100% !important;
-              height: 100vh !important;
-              height: 100dvh !important;
-              max-height: 100vh !important;
-              max-height: 100dvh !important;
-              border-radius: 0 !important;
-              display: flex !important;
-              flex-direction: column !important;
+              right: 40px !important;
+              bottom: 60px !important;
           }
-          .chatbot_AIDACHATBOX header {
-              flex-shrink: 0 !important;
-          }
-          .chatbot_AIDACHATBOX .chatbox_AIDACHATBOX {
-              flex: 1 1 0 !important;
-              min-height: 0 !important;
-              height: auto !important;
-              max-height: none !important;
-              overflow-y: auto !important;
-              -webkit-overflow-scrolling: touch !important;
-              padding-bottom: 160px !important;
-          }
-          .chatbot_AIDACHATBOX .aida_link_AIDACHATBOX {
-              position: fixed !important;
-              left: 0 !important;
-              right: 0 !important;
-              bottom: 71px !important;
-              z-index: 10 !important;
-              flex-shrink: 0 !important;
-              margin-top: auto !important;
-              background-color: #fff !important;
-          }
-          .chatbot_AIDACHATBOX .chat-input_AIDACHATBOX {
-              position: fixed !important;
-              left: 0 !important;
-              right: 0 !important;
-              bottom: 0 !important;
-              z-index: 10 !important;
-              flex-shrink: 0 !important;
-          }
-          .chatbot_AIDACHATBOX header button {
-              display: block !important;
-          }
-          body:has(.show-chatbot) {
-            overflow: hidden !important;
-            position: fixed !important;
-            width: 100% !important;
-        }
       }
     </style>
     <div class="chat-tooltip_AIDACHATBOX" id="chatTooltip_AIDACHATBOX">
@@ -580,7 +532,7 @@
         </div>
       </a>
       <div class="chat-input_AIDACHATBOX">
-        <textarea placeholder="پیام مورد نظر خود را وارد کنید..." required></textarea>
+        <textarea placeholder="سوالت رو اینجا بنویس…" required></textarea>
         <button class="send-btn_AIDACHATBOX">
           <svg xmlns="http://www.w3.org/2000/svg" width="20px" class="img5_AIDACHATBOX" viewBox="0 0 24 24" fill="none" transform="matrix(-1, 0, 0, 1, 0, 0)">
             <g id="SVGRepo_bgCarrier" stroke-width="0"/>

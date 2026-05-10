@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aida Premium Chat UX</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, rgba(0,179,159,0.12), transparent 35%),
+    #f4f6f8;
+  font-family: sans-serif;
+}
+
+.chat-widget {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 400px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.22);
+  overflow: hidden;
+  z-index: 9999;
+  border: 1px solid rgba(0,179,159,0.16);
+}
+
+.chat-header {
+  background: linear-gradient(135deg, #00a991, #00d4b8);
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  color: #00a991;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.25);
+}
+
+.header-title {
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.header-subtitle {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  margin-right: auto;
+  box-shadow: 0 0 0 5px rgba(255,255,255,0.18);
+  animation: onlinePulse 1.8s infinite;
+}
+
+@keyframes onlinePulse {
+  0% { transform: scale(1); opacity: 1; }
+  70% { transform: scale(1.25); opacity: 0.75; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.chat-body {
+  height: 430px;
+  padding: 16px;
+  overflow-y: auto;
+  background:
+    linear-gradient(180deg, #fbfbfb, #f7faf9);
+}
+
+.message-row {
+  display: flex;
+  margin-bottom: 12px;
+  animation: slideIn 0.28s ease;
+}
+
+.message-row.user-row {
+  justify-content: flex-start;
+}
+
+.message-row.bot-row {
+  justify-content: flex-end;
+}
+
+.message {
+  max-width: 82%;
+  padding: 11px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.user {
+  background: linear-gradient(135deg, #00a991, #00c7aa);
+  color: #fff;
+  border-bottom-right-radius: 5px;
+}
+
+.bot {
+  background: #fff;
+  color: #222;
+  border: 1px solid #e9eeee;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.processing-card {
+  width: 88%;
+  margin-right: auto;
+  margin-bottom: 12px;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #dff4f0;
+  padding: 14px;
+  box-shadow: 0 14px 32px rgba(0,179,159,0.11);
+  animation: slideIn 0.28s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.processing-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,179,159,0.08), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  to { right: 130%; }
+}
+
+.processing-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.mini-avatar {
+  width: 32px;
+  height: 32px;
+  background: #e8faf7;
+  color: #00a991;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: breathe 1.6s infinite;
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+.processing-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #009b86;
+}
+
+.processing-subtitle {
+  font-size: 12px;
+  color: #777;
+  margin-top: 2px;
+}
+
+.progress-wrap {
+  height: 7px;
+  background: #e8f7f4;
+  border-radius: 30px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.progress-bar {
+    height: 100%;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, #00a991, #00d4b8, transparent);
+  border-radius: 30px;
+  animation: infiniteProgress 1.25s ease-in-out infinite;
+}
+
+@keyframes infiniteProgress {
+  0% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(-260%);
+  }
+}
+
+.steps {
+  display: grid;
+  gap: 7px;
+  font-size: 12px;
+  color: #888;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.25s;
+}
+
+.step-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: transparent;
+}
+
+.step.active {
+  color: #00a991;
+  font-weight: 700;
+}
+
+.step.active .step-icon {
+  background: #00b39f;
+  border-color: #00b39f;
+  color: #fff;
+}
+
+.typing-line {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 12px;
+}
+
+.dots {
+  display: flex;
+  gap: 5px;
+}
+
+/* آواتار هدر (بزرگ) */
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+
+/* 🔥 mini-avatar بزرگ‌تر و خفن */
+.mini-avatar {
+  width: 48px;     /* 👈 بزرگ شد */
+  height: 48px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: breathe 1.6s infinite;
+}
+
+.mini-avatar img {
+  width: 64px;     /* 👈 این مهمه */
+  height: 64px;
+  object-fit: contain;
+  
+  animation: thinking 2.2s ease-in-out infinite;
+}
+.dots span {
+  width: 7px;
+  height: 7px;
+  background: #00b39f;
+  border-radius: 50%;
+  animation: dot 1.2s infinite;
+}
+
+.dots span:nth-child(2) { animation-delay: 0.18s; }
+.dots span:nth-child(3) { animation-delay: 0.36s; }
+
+@keyframes dot {
+  0%, 80%, 100% { opacity: 0.25; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-5px); }
+}
+
+.quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.quick-chip {
+  border: 1px solid #d9efeb;
+  background: #fff;
+  color: #009b86;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.quick-chip:hover {
+  background: #e8faf7;
+}
+
+.chat-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #edf0f0;
+  background: #fff;
+}
+
+.chat-input {
+  flex: 1;
+  border: 1px solid #dfe5e5;
+  border-radius: 18px;
+  padding: 12px 14px;
+  outline: none;
+  font-size: 14px;
+}
+
+.chat-input:focus {
+  border-color: #00b39f;
+  box-shadow: 0 0 0 4px rgba(0,179,159,0.08);
+}
+
+.chat-input:disabled {
+  background: #f3f5f5;
+  color: #999;
+}
+
+.send-btn {
+  width: 46px;
+  height: 46px;
+  border: none;
+  background: linear-gradient(135deg, #00a991, #00d4b8);
+  color: #fff;
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.send-btn:disabled {
+  background: #bdc5c5;
+  cursor: not-allowed;
+}
+</style>
+</head>
+
+<body>
+
+<div class="chat-widget">
+  <div class="chat-header">
+    <div class="avatar">
+    <img src="download.png" alt="bot" />
+  </div>
+    <div>
+      <div class="header-title">آیدا</div>
+      <div class="header-subtitle">دستیار هوشمند دیدار</div>
+    </div>
+    <div class="online-dot"></div>
+  </div>
+
+  <div class="chat-body" id="chatBody">
+    <div class="message-row bot-row">
+      <div class="message bot">
+        سلام 👋<br>
+        من آیدا هستم. سوالتان را بپرسید تا راهنمایی‌تان کنم.
+        <div class="quick-actions">
+          <button class="quick-chip">قیمت دیدار چقدر است؟</button>
+          <button class="quick-chip">دمو می‌خواهم</button>
+          <button class="quick-chip">CRM چیست؟</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="chat-form" id="chatForm">
+    <input class="chat-input" id="chatInput" placeholder="پیام خود را وارد کنید..." autocomplete="off" />
+    <button class="send-btn" id="sendBtn" type="submit">➤</button>
+  </form>
+</div>
+
+<script>
+const chatBody = document.getElementById("chatBody");
+const chatForm = document.getElementById("chatForm");
+const chatInput = document.getElementById("chatInput");
+const sendBtn = document.getElementById("sendBtn");
+
+function scrollToBottom() {
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function addMessage(text, type = "bot") {
+  const row = document.createElement("div");
+  row.className = `message-row ${type === "user" ? "user-row" : "bot-row"}`;
+
+  const msg = document.createElement("div");
+  msg.className = `message ${type}`;
+  msg.innerHTML = text;
+
+  row.appendChild(msg);
+  chatBody.appendChild(row);
+  scrollToBottom();
+
+  return msg;
+}
+
+function lockInput() {
+  chatInput.disabled = true;
+  sendBtn.disabled = true;
+  chatInput.placeholder = "آیدا در حال آماده‌سازی پاسخ است...";
+}
+
+function unlockInput() {
+  chatInput.disabled = false;
+  sendBtn.disabled = false;
+  chatInput.placeholder = "پیام خود را وارد کنید...";
+  chatInput.focus();
+}
+
+function createProcessingCard() {
+  const card = document.createElement("div");
+  card.className = "processing-card";
+
+  card.innerHTML = `
+    <div class="processing-top">
+      <div class="mini-avatar">
+     <img src="ChatGPT.png" alt="bot" />
+        </div>
+      <div>
+        <div class="processing-title">پیام دریافت شد</div>
+        <div class="processing-subtitle" id="dynamicText">آیدا در حال بررسی سوال شماست...</div>
+      </div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+
+    <div class="typing-line">
+      <span>در حال تایپ</span>
+      <div class="dots"><span></span><span></span><span></span></div>
+    </div>
+  `;
+
+  chatBody.appendChild(card);
+  scrollToBottom();
+
+  return card;
+}
+
+function typeBotMessage(htmlText) {
+  return new Promise(resolve => {
+    const row = document.createElement("div");
+    row.className = "message-row bot-row";
+
+    const msg = document.createElement("div");
+    msg.className = "message bot";
+
+    row.appendChild(msg);
+    chatBody.appendChild(row);
+
+    const plain = htmlText.replace(/<br\s*\/?>/gi, "\n");
+    let i = 0;
+
+    const interval = setInterval(() => {
+      const current = plain.slice(0, i).replace(/\n/g, "<br>");
+      msg.innerHTML = current;
+      i++;
+      scrollToBottom();
+
+      if (i > plain.length) {
+        clearInterval(interval);
+        resolve();
+      }
+    }, 18);
+  });
+}
+
+async function fakeApiRequest(userMessage) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(
+        "پاسخ آماده شد ✅<br><br>" +
+        "بر اساس سوال شما، بهترین مسیر این است که ابتدا نیاز اصلی کسب‌وکار را مشخص کنیم و سپس قابلیت مناسب دیدار را پیشنهاد دهیم.<br><br>" +
+        "اگر بخواهید، می‌توانم همین حالا شما را مرحله‌به‌مرحله راهنمایی کنم."
+      );
+    }, 4200);
+  });
+}
+
+async function handleSend(text) {
+  const userMessage = text.trim();
+  if (!userMessage) return;
+
+  addMessage(userMessage, "user");
+  chatInput.value = "";
+  lockInput();
+
+  const card = createProcessingCard();
+
+  const progressBar = card.querySelector("#progressBar");
+  const dynamicText = card.querySelector("#dynamicText");
+  const step2 = card.querySelector("#step2");
+  const step3 = card.querySelector("#step3");
+
+  setTimeout(() => {
+    progressBar.style.width = "45%";
+    step2.classList.add("active");
+    dynamicText.textContent = "موضوع پیام شما در حال تحلیل است...";
+  }, 900);
+
+  setTimeout(() => {
+    progressBar.style.width = "78%";
+    step3.classList.add("active");
+    dynamicText.textContent = "پاسخ مناسب در حال آماده‌سازی است...";
+  }, 2300);
+
+  try {
+    const answer = await fakeApiRequest(userMessage);
+
+    progressBar.style.width = "100%";
+    dynamicText.textContent = "پاسخ آماده شد.";
+
+    setTimeout(async () => {
+      card.remove();
+      await typeBotMessage(answer);
+      unlockInput();
+    }, 450);
+
+  } catch (error) {
+    card.remove();
+    addMessage("متأسفانه در دریافت پاسخ مشکلی پیش آمد. لطفاً دوباره تلاش کنید.", "bot");
+    unlockInput();
+  }
+}
+
+chatForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+  handleSend(chatInput.value);
+});
+
+document.querySelectorAll(".quick-chip").forEach(chip => {
+  chip.addEventListener("click", () => {
+    handleSend(chip.textContent);
+  });
+});
+</script>
+
+</body>
+</html>
